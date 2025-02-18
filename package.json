@@ -1,0 +1,20 @@
+{
+	"name": "nlw-connect-node",
+	"version": "1.0.0",
+	"main": "index.js",
+	"scripts": {
+		"dev": "tsx watch --env-file=.env src/server.ts"
+	},
+	"author": "",
+	"license": "ISC",
+	"description": "",
+	"dependencies": {
+		"fastify": "^5.2.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.4",
+		"@types/node": "^22.13.4",
+		"tsx": "^4.19.2",
+		"typescript": "^5.7.3"
+	}
+}
