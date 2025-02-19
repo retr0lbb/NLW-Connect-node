@@ -11,13 +11,7 @@
 	"linter": {
 		"enabled": true,
 		"rules": {
-			"recommended": true,
-			"a11y": {
-				"noSvgWithoutTitle": "off"
-			},
-			"suspicious": {
-				"noArrayIndexKey": "info"
-			}
+			"recommended": true
 		}
 	},
 	"javascript": { "formatter": { "quoteStyle": "double" } }
