@@ -1,3 +1,4 @@
+import { eq } from "drizzle-orm";
 import { db } from "../drizzle/client";
 import { subscriptions } from "../drizzle/schema/subscriptions";
 
@@ -7,6 +8,15 @@ interface SubscribeToEventParams {
 }
 
 export async function subscribeToEvent(data: SubscribeToEventParams) {
+	const subscribers = await db
+		.select()
+		.from(subscriptions)
+		.where(eq(subscriptions.email, data.email));
+
+	if (subscribers.length > 0) {
+		return { subscriverId: subscribers[0].id };
+	}
+
 	const result = await db
 		.insert(subscriptions)
 		.values({
