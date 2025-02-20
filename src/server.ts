@@ -9,8 +9,11 @@ import {
 	validatorCompiler,
 } from "fastify-type-provider-zod";
 import { env } from "./env";
+import { getRanking } from "./functions/get-ranking";
 import { accessToInviteLinkRoute } from "./routes/access-invite-link";
+import { getRankingRoute } from "./routes/get-ranking";
 import { getSubscriberInviteClicksRouter } from "./routes/get-subscriber-invite-click";
+import { getSubscriberRankingPositionRoute } from "./routes/get-subscriber-rank-position";
 import { getUserIndicationsRoute } from "./routes/get-user-indications";
 import { subscribeToEventRoute } from "./routes/subscribe-to-event";
 
@@ -37,6 +40,8 @@ app.register(subscribeToEventRoute);
 app.register(accessToInviteLinkRoute);
 app.register(getSubscriberInviteClicksRouter);
 app.register(getUserIndicationsRoute);
+app.register(getSubscriberRankingPositionRoute);
+app.register(getRankingRoute);
 
 app
 	.listen({
